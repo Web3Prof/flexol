@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Create a connection to Solana's mainnet
-const connection = new Connection(process.env.QUICKNODE_RPC_URL, "confirmed");
+const connection = new Connection(process.env.SOLANA_RPC_URL, "confirmed");
 
 // Helper to calculate the associated token address (ATA)
 async function calculateATA(walletAddress, tokenMint) {
