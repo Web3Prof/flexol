@@ -30,7 +30,7 @@ export const Profile = () => {
                 <div className='flex flex-col items-start mr-4'>
                     <div className='flex items-center mb-2'>
                         <input
-                            placeholder='Title here'
+                            placeholder='Name your Flexol'
                             type='text'
                             value={title}
                             onChange={handleTitleChange} // Set title on change
@@ -42,7 +42,7 @@ export const Profile = () => {
                     <div className='flex items-center'>
                         <input
                             type='text'
-                            placeholder='Description here'
+                            placeholder='Add description'
                             value={caption}
                             onChange={handleCaptionChange} // Set caption on change
                             className='text-xl py-1 px-2 border-white bg-transparent focus:outline-none text-white'
