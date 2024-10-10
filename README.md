@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flexol
+Flex your Solana journey
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a Solana-based dashboard application that allows users to track token prices, view wallet balances, and interact with tokens in a customizable, drag-and-drop interface. Users can view real-time token information, calculate their profit and loss (PnL), and interact with items displayed on the dashboard. The application integrates with the Solana blockchain and utilizes Solana wallets, such as Phantom, for authentication and transaction signing.
+
+The app is designed to provide an intuitive and responsive experience for users looking to track their portfolio or interact with their Solana assets. The core features include customizable item elements, wallet connection, and real-time token price updates using the DexScreener API and Helius API.
+
+## Features
+
+- **Wallet Integration**: Connect Solana wallets like Phantom to view wallet balances and perform transactions.
+- **Drag-and-Drop UI**: Customize the layout of your dashboard by dragging and dropping token elements on the screen.
+- **Real-Time Token Prices**: Automatically fetch and display the latest token prices.
+- **PnL Calculation**: Easily calculate the profit and loss (PnL) based on wallet transactions.
+- **Token Information**: View token prices, symbol, and image in a user-friendly format.
+- **Customizable Dashboard**: Personalize the dashboard with different token elements and layouts.
+
+## Setup
+
+To get started with this project, follow the steps below:
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repository-url>
+cd <your-project-directory>
+```
+### 2. Install dependencies
+
+```bash
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Setup .env
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+SOLANA_RPC_URL=<your-solana-rpc-url>
+HELIUS_KEY=<your-helius-api-key>
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Start development server
+You can access in `http://localhost:3000`
+```bash
+npm run dev
+```
 
-## Learn More
+## Future Plans
+- **More Item Elements**: Additional customizable elements for the dashboard.
+- **Enhanced Customization**: Options for changing colors, sizes, and styles.
+- **Multi-Wallet Support**: Connect and manage multiple Solana wallets.
+- **"Pay Me" Feature**: Generate payment links or QR codes for easy tipping.
+- **Reactions**: Add reactions to item elements like thumbs up or stars.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+Contributions are welcome! Feel free to submit issues or pull requests.
