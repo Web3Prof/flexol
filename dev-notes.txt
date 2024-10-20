@@ -1,0 +1,94 @@
+Flexol
+======
+references:
+bento.me
+dexscreener
+dRPC
+Dune
+check my bot project for reference
+
+
+https://www.canva.com/design/DAGTDE_MHOA/J2choRBbA0Ib0mKr9fykPA/edit?utm_content=DAGTDE_MHOA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+Desc:
+Flexol is your ultimate Solana-powered crypto playground! Customize your drag-and-drop dashboard to flaunt your token watchlist, show off your trading profits, and keep track of how many epic trades you’ve made. It's all about flexing your Solana journey in style. Whether you're tracking market swings or celebrating big wins, Flexol makes it easy (and fun!) to share your success, built for the player in Solana.
+
+https://github.com/Web3Prof/flexol
+DB:
+user, x, y, tokenAddress, item
+
+The bento box elements:
+the sizing just a simple 1x1 grid or 1x2 grid.
+
+Item ID:
+- gt
+- tc-{tokenAddress}
+- fb-{tokenAddress}
+- pml-{tokenAddress}
+- wl-{tokenAddress}
+
+Preferable: ada size 11 atau 12
+
+for 1x2 size bento:
+General:
+Traded {tokenNumber} tokens in Solana
+
+Token related
+- trade counts: Traded ${token} {count}X times
+- First bought ${token} at dd/MM/yyyy
+Profit/Loss
+- Lost {loss} from ${token}
+- Profited {profit} from ${token}
+-- {profit} & {loss} can be in percentage or dollar
+Watchlist
+- Watching ${token}: ${price} {up or down symbol}{24hMovement}%
+
+
+for 1x1 size bento: - future update
+General:
+Traded {tokenNumber} tokens
+
+Token related
+- trade counts: {tokenImage} {token} {count}X
+- {tokenImage} {token} First bought at dd/MM/yyyy
+
+Profit/Loss
+- {tokenImage} {token}  {loss}
+- {tokenImage} {token} {profit}
+-- {profit} & {loss} can be in percentage or dollar
+Watchlist
+- Watching {tokenImage} ${token}
+
+show/hide address
+
+TODO:
+Febi:
+API for each element: param: address & token
+Ricardo:
+UI contek bento, kalau bisa refine sikit, title di top center
+reference: bentro.me, https://nevflynn.com/
+Cek connect wallet Solana ~
+
+
+--
+Flexol Profiles: Users can personalize their Flexol dashboards and share public views via flexol.io/username.
+"Flex Your Portfolio": You could use fun branding language like "Flex your portfolio to the world" to emphasize the customizable and shareable nature of the platform.
+
+Fun features:
+Bento element color options (basic light/neon pink, red, green, blue, yellow, purple, orange)
+Flexol Badges: Introduce badges or achievements based on portfolio performance or activity, which could be a fun addition to user profiles.
+React with emoji: to elements with emoji and include statistic of reaction on click of the element.
+
+{profile} Name
+Solana Journey
+
+{description}
+
+
+Data Source:
+- token price:
+DexScreener: udah aman
+
+- PnL of a token for a wallet:
+Butuh hit DexScreener buat tau avg price
+- Trade count of a token for a wallet

@@ -1,104 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   --background: #ffffff;
+   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+   :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+   }
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
+   font-family: "Montserrat", sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Montserrat', sans-serif;
-  height: auto;
-  min-height: 100% !important;
-  /* font-family: Arial, Helvetica, sans-serif; */
+   color: var(--foreground);
+   background: var(--background);
+   font-family: "Montserrat", sans-serif;
+   height: auto;
+   min-height: 100% !important;
+   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+   .text-balance {
+      text-wrap: balance;
+   }
 }
 
 .grid-container {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
-  gap: 20px !important;
-  width: 910px !important;
-  grid-auto-rows: minmax(150px, auto) !important;
-  margin: 0 auto !important;
-  position: relative !important;
-  overflow: hidden !important;
-  /* This ensures that the parent will recognize content */
-  min-height: 100vh !important;
-  /* Give a minimum height to help recognize absolute children */
+   display: grid !important;
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+   gap: 20px !important;
+   width: 910px !important;
+   grid-auto-rows: minmax(150px, auto) !important;
+   margin: 0 auto !important;
+   position: relative !important;
+   overflow: hidden !important;
+   /* This ensures that the parent will recognize content */
+   min-height: 100vh !important;
+   /* Give a minimum height to help recognize absolute children */
 }
 
 .loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  /* Dark transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  /* Ensure it overlays on top of everything */
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.6);
+   /* Dark transparent background */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 10;
+   /* Ensure it overlays on top of everything */
 }
 
 .loader {
-  height: 45px;
-  --c: no-repeat linear-gradient(#514b82 0 0);
-  background:
-    var(--c) left,
-    var(--c) center,
-    var(--c) right;
-  background-size: 16px 100%;
-  animation:
-    loader-expand 1.5s infinite,
-    loader-rotate 1.5s infinite;
+   height: 45px;
+   --c: no-repeat linear-gradient(#514b82 0 0);
+   background: var(--c) left, var(--c) center, var(--c) right;
+   background-size: 16px 100%;
+   animation: loader-expand 1.5s infinite, loader-rotate 1.5s infinite;
 }
 
 @keyframes loader-expand {
+   0%,
+   100% {
+      width: 45px;
+   }
 
-  0%,
-  100% {
-    width: 45px;
-  }
-
-  35%,
-  65% {
-    width: 65px;
-  }
+   35%,
+   65% {
+      width: 65px;
+   }
 }
 
 @keyframes loader-rotate {
+   0%,
+   40% {
+      transform: rotate(0);
+   }
 
-  0%,
-  40% {
-    transform: rotate(0);
-  }
+   60%,
+   100% {
+      transform: rotate(90deg);
+   }
+}
 
-  60%,
-  100% {
-    transform: rotate(90deg);
-  }
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+.animate-fadeIn {
+   animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+   0% {
+      transform: scale(0.8);
+      opacity: 0;
+   }
+   60% {
+      transform: scale(2);
+      opacity: 1;
+   }
+   100% {
+      transform: scale(1);
+      opacity: 0.8;
+   }
+}
+
+@keyframes fadeOut {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+
+.animate-bounceIn {
+   animation: bounceIn 0.6s ease-out forwards;
+}
+
+.animate-fadeOut {
+   animation: fadeOut 3s ease 2s forwards; /* Fades out after 2s */
+}
+
+@keyframes bounceInFadeOut {
+   /* Bounce in */
+   0% {
+      transform: scale(0.8);
+      opacity: 0;
+   }
+   15% {
+      transform: scale(1.2);
+      opacity: 1;
+   }
+   30% {
+      transform: scale(0.9);
+      opacity: 1;
+   }
+   60% {
+      transform: scale(1);
+      opacity: 1;
+   }
+
+   /* Stay visible, then fade out */
+   60%,
+   80% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+
+.animate-bounceInFadeOut {
+   animation: bounceInFadeOut 3s ease forwards; /* Adjust timing as needed */
 }
