@@ -362,7 +362,7 @@ export const Grid = () => {
                                  >
                                     <PresentationChartLineIcon className="size-5" />
                                  </button>
-                                 <span className="absolute bottom-full mb-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                 <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     WatchList
                                  </span>
                               </div>
@@ -383,7 +383,7 @@ export const Grid = () => {
                                  >
                                     <PercentBadgeIcon className="size-5" />
                                  </button>
-                                 <span className="absolute bottom-full mb-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                 <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     PnL
                                  </span>
                               </div>
@@ -404,7 +404,7 @@ export const Grid = () => {
                                  >
                                     <CurrencyDollarIcon className="size-5" />
                                  </button>
-                                 <span className="absolute bottom-full mb-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                 <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     Trade Count
                                  </span>
                               </div>
