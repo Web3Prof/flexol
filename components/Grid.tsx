@@ -44,7 +44,19 @@ export const Grid = () => {
    const [isClient, setIsClient] = useState(false); // Track client-side rendering
    const { publicKey } = useWallet();
    const [loading, setLoading] = useState(false);
+   const [fadeOpacity, setFadeOpacity] = useState(0);
    const [errorMessage, setErrorMessage] = useState("");
+
+   const handleScroll = () => {
+      if (containerRef.current) {
+         const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+         const maxScroll = scrollHeight - clientHeight;
+
+         // Calculate the opacity based on scroll position (closer to the bottom = more opacity)
+         const opacity = Math.min((scrollTop / maxScroll) * 1.5, 1); // Adjust multiplier to control how fast opacity increases
+         setFadeOpacity(opacity);
+      }
+   };
 
    // Ensuring client-side rendering to avoid hydration issues
    useEffect(() => {
@@ -252,10 +264,12 @@ export const Grid = () => {
             <>
                <div className="flex justify-between px-4 py-4 lg:justify-end sm:justify-center">
                   <div className="flex space-x-2">
-                     <WalletMultiButton />
+                     <WalletProviderComponent>
+                        <WalletMultiButton />
+                     </WalletProviderComponent>
                   </div>
                </div>
-               <div className="flex flex-col justify-center items-center w-full py-2">
+               <div className="flex flex-col justify-center items-center w-full py-2 mb-8">
                   <div className="flex justify-center items-center w-[90vw] max-w-[90vw]">
                      <Profile />
                   </div>
@@ -281,6 +295,10 @@ export const Grid = () => {
                               token_img_url={item.token_img_url}
                            />
                         ))}
+                        <div
+                           className="dynamic-fade-overlay"
+                           style={{ opacity: fadeOpacity }} // Dynamically adjust opacity
+                        />
                      </div>
                   </DndContext>
                </div>

@@ -18,6 +18,8 @@
 
 h1 {
    font-family: "Montserrat", sans-serif;
+   min-height: 100% !important;
+   overflow-y: auto !important;
 }
 
 body {
@@ -26,6 +28,7 @@ body {
    font-family: "Montserrat", sans-serif;
    height: auto;
    min-height: 100% !important;
+   overflow-y: auto !important;
    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
@@ -39,14 +42,15 @@ body {
    display: grid !important;
    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
    gap: 20px !important;
-   width: 910px !important;
+   width: 920px !important;
    grid-auto-rows: minmax(150px, auto) !important;
    margin: 0 auto !important;
    position: relative !important;
-   overflow: hidden !important;
    /* This ensures that the parent will recognize content */
    min-height: 100vh !important;
    /* Give a minimum height to help recognize absolute children */
+   background-color: rgba(0, 0, 0, 0.2); /* Slightly transparent black */
+   border-radius: 30px; /* Add rounded corners */
 }
 
 .loading-overlay {
@@ -172,4 +176,20 @@ body {
 
 .animate-bounceInFadeOut {
    animation: bounceInFadeOut 3s ease forwards; /* Adjust timing as needed */
+}
+
+.dynamic-fade-overlay {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 100px; /* Adjust the height of the fade */
+   background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+   );
+   pointer-events: none; /* Ensure it doesn’t block interactions */
+   opacity: 0; /* Initially hidden */
+   transition: opacity 0.3s ease-in-out;
 }
